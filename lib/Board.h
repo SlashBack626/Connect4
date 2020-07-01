@@ -33,6 +33,8 @@ namespace connect4 {
         bool isValidMove(size_t col) const;
 
         bool matchEnded();
+
+        const std::vector<STONE>& getColumn(size_t col) const;
     };
 }
 

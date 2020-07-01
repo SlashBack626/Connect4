@@ -16,6 +16,7 @@ namespace connect4 {
 
     void Board::print() {
         std::stringstream ss;
+        ss << " 1 2 3 4 5 6 7\n";
         for (int row = height - 1; row >= 0; --row) {
             for (int col = 0; col < width; ++col) {
                 ss << "|";
@@ -24,6 +25,7 @@ namespace connect4 {
             }
             ss << "|\n";
         }
+        ss << " 1 2 3 4 5 6 7\n";
         std::cout << ss.str();
     }
 
@@ -83,5 +85,10 @@ namespace connect4 {
             }
         }
         return false;
+    }
+
+    const std::vector<STONE> &Board::getColumn(size_t col) const {
+        if(col > width) throw std::range_error("out of range");
+        return store[col];
     }
 }
