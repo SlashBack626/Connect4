@@ -21,19 +21,16 @@ void connect4::Game::gameLoop() {
     while (!finished) {
         if (player == STONE::PLAYER1) round++;
         std::system("clear");
-        std::cout << "Round: " << round << "\n"
-                  << ((player == STONE::PLAYER1) ? "Player1" : "Player2") << "'s turn!" << std::endl;
+        printRound(player);
         board.print();
         getUserInput(players[(player == STONE::PLAYER1) ? 0 : 1]);
-        finished = checkWin();
+        finished = board.matchEnded();
+        if(finished) winner = (player == STONE::PLAYER1) ? WINNER::PLAYER1 : WINNER::PLAYER2;
         player = (player == STONE::PLAYER1) ? STONE::PLAYER2 : STONE::PLAYER1;
     }
+    std::system("clear");
+    board.print();
     printWinner(winner);
-}
-
-bool connect4::Game::checkWin() {
-    winner = static_cast<WINNER>(STONE::PLAYER1);
-    return false;
 }
 
 void connect4::Game::printWinner(WINNER winner) {
@@ -47,6 +44,11 @@ void connect4::Game::printWinner(WINNER winner) {
         default:
             cout << "Match was a draw" << endl;
     }
+}
+
+void connect4::Game::printRound(STONE player) {
+    std::cout << "Round: " << round << "\n"
+              << ((player == STONE::PLAYER1) ? "Player1" : "Player2") << "'s turn!" << std::endl;
 }
 
 void connect4::Game::getUserInput(Player &p) {

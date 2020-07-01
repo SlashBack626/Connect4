@@ -36,7 +36,8 @@ namespace connect4 {
 
         static void printWinner(WINNER winner);
 
-        bool checkWin();
+        void printRound(STONE player);
+
     public:
         Game(Player &p1, Player &p2);
         // can only be called once
