@@ -6,7 +6,7 @@
 int main() {
     connect4::HumanPlayer p1(STONE::PLAYER1);
     connect4::HumanPlayer p2(STONE::PLAYER2);
-    connect4::AIPlayer a1(STONE::PLAYER2, connect4::BOT::BOT2);
+    connect4::AIPlayer a1(STONE::PLAYER2, connect4::BOT::BOT1);
 //    connect4::Game game(p1, p2);
 //    connect4::Game game(p1, p2);
     connect4::Game game(p1, a1);

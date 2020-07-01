@@ -3,6 +3,7 @@
 //
 
 #include "AIPlayer.h"
+#include <random>
 
 namespace connect4 {
     size_t AIPlayer::makeMove(const Board &b) {
@@ -21,7 +22,14 @@ namespace connect4 {
     AIPlayer::AIPlayer(STONE p, BOT bot) : Player(p), bot(bot) {}
 
     size_t AIPlayer::algo1(const Board &b) {
-        return 0;
+        std::random_device rd;
+        std::default_random_engine re(rd());
+        std::uniform_int_distribution<int> dist(0, Board::getWidth());
+        size_t output;
+        do {
+            output = dist(re);
+        } while (!b.isValidMove(output));
+        return output;
     }
 
     size_t AIPlayer::algo2(const Board &b) {
