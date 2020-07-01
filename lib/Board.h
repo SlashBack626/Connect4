@@ -22,12 +22,17 @@ namespace connect4 {
     private:
         std::array<std::vector<STONE>, width> store;
 
+        bool columnConnects4(size_t col);
+        bool rowConnects4(size_t row);
+
     public:
         void print();
 
         void setStone(size_t column, STONE p);
 
         bool isValidMove(size_t col) const;
+
+        bool matchEnded();
     };
 }
 
