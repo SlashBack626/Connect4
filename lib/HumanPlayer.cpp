@@ -16,7 +16,7 @@ namespace connect4 {
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "invalid input" << std::endl;
         }
-        return std::strtol(&c, nullptr, 10);
+        return std::strtol(&c, nullptr, 10)-1;
     }
 
     HumanPlayer::HumanPlayer(STONE p) : Player(p) {}

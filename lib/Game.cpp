@@ -52,5 +52,5 @@ void connect4::Game::printRound(STONE player) {
 }
 
 void connect4::Game::getUserInput(Player &p) {
-    board.setStone(p.makeMove(board)-1, p.getStone());
+    board.setStone(p.makeMove(board), p.getStone());
 }
