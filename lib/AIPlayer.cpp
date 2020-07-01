@@ -19,4 +19,23 @@ namespace connect4 {
     }
 
     AIPlayer::AIPlayer(STONE p, BOT bot) : Player(p), bot(bot) {}
+
+    size_t AIPlayer::algo1(const Board &b) {
+        return 0;
+    }
+
+    size_t AIPlayer::algo2(const Board &b) {
+        for (int col = 0; col < Board::getWidth(); ++col) {
+            if(b.isValidMove(col)) return col;
+        }
+        throw std::logic_error("cannot make a move");
+    }
+
+    size_t AIPlayer::algo3(const Board &b) {
+        return 0;
+    }
+
+    size_t AIPlayer::algo4(const Board &b) {
+        return 0;
+    }
 }

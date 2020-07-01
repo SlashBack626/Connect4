@@ -18,16 +18,16 @@ namespace connect4 {
     private:
         BOT bot;
 
-        size_t algo1(const Board &b);
+        static size_t algo1(const Board &b);
 
-        size_t algo2(const Board &b);
+        static size_t algo2(const Board &b);
 
         size_t algo3(const Board &b);
 
         size_t algo4(const Board &b);
 
     public:
-        AIPlayer(STONE p, BOT bot = BOT::BOT1);
+        explicit AIPlayer(STONE p, BOT bot = BOT::BOT1);
 
         size_t makeMove(const Board &b) override;
     };
