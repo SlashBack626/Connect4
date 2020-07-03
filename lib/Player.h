@@ -16,10 +16,10 @@ namespace connect4 {
     public:
         explicit Player(CHIP p);
 
-        // returns the chip (color) of the player
+        /// returns the chip (color) of the player
         CHIP getChip() const;
 
-        /*
+        /**
          * returns the decision where to put the chip based on the given Board
          *  0 <= returnValue < Board::getWidth()
          */

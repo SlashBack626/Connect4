@@ -56,6 +56,7 @@ namespace connect4 {
         return selection;
     }
 
+    // wins in at least 85% of all games
     size_t AIPlayer::algo4(const Board &b) {
         return 0;
     }
