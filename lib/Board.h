@@ -7,9 +7,10 @@
 
 #include <array>
 #include <vector>
-#include "STONE.h"
+#include "CHIP.h"
 
 namespace connect4 {
+    // represents the board
     class Board {
     private:
         const static size_t height = 6;
@@ -20,21 +21,35 @@ namespace connect4 {
         static const size_t getWidth();
 
     private:
-        std::array<std::vector<STONE>, width> store;
+        std::array<std::vector<CHIP>, width> store;
 
         bool columnConnects4(size_t col);
         bool rowConnects4(size_t row);
 
     public:
+        // prints the board to stdout in a human readable way
         void print();
 
-        void setStone(size_t column, STONE p);
+        /*
+         * will put a chip in the given column
+         * throws an error if the column is already full
+         */
+        void putChip(size_t column, CHIP p);
 
+        /*
+         * checks if it is valid to put a chip into the given column
+         */
         bool isValidMove(size_t col) const;
 
+        /*
+         * checks if the match has ended (either by players winning or draw)
+         */
         bool matchEnded();
 
-        const std::vector<STONE>& getColumn(size_t col) const;
+        /*
+         * returns the vector for a given column
+         */
+        const std::vector<CHIP>& getColumn(size_t col) const;
     };
 }
 

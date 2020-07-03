@@ -9,11 +9,8 @@
 
 namespace connect4 {
     class HumanPlayer : public Player {
-    private:
-        size_t getUserInput();
-
     public:
-        explicit HumanPlayer(STONE p);
+        explicit HumanPlayer(CHIP p);
 
         size_t makeMove(const Board &b) override;
     };

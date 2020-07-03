@@ -4,9 +4,9 @@
 
 #include "Player.h"
 namespace connect4 {
-    Player::Player(STONE p) : stone(p) {}
+    Player::Player(CHIP p) : chip(p) {}
 
-    STONE Player::getStone() const {
-        return stone;
+    CHIP Player::getChip() const {
+        return chip;
     }
 }

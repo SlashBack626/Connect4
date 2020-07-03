@@ -17,6 +17,7 @@ namespace connect4 {
         NONE
     };
 
+    // Main class of the game
     class Game {
     private:
         bool started = false;
@@ -27,19 +28,22 @@ namespace connect4 {
         Board board;
 
     private:
+
         // main loop which will  last until the game is over
         void gameLoop();
+
         // user should select the column where he wants to put the chip
         void getUserInput(Player &p);
-//        // prints the board to the terminal ("GUI")
-//        void printGameBoard();
 
+        // prints the winner of the game
         static void printWinner(WINNER winner);
 
-        void printRound(STONE player);
+        // prints the current round counter
+        void printRound(CHIP player);
 
     public:
         Game(Player &p1, Player &p2);
+
         // can only be called once
         void start();
     };

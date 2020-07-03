@@ -24,5 +24,5 @@ namespace connect4 {
         return input-1;
     }
 
-    HumanPlayer::HumanPlayer(STONE p) : Player(p) {}
+    HumanPlayer::HumanPlayer(CHIP p) : Player(p) {}
 }

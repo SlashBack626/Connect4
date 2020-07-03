@@ -19,7 +19,7 @@ namespace connect4 {
         }
     }
 
-    AIPlayer::AIPlayer(STONE p, BOT bot) : Player(p), bot(bot) {}
+    AIPlayer::AIPlayer(CHIP p, BOT bot) : Player(p), bot(bot) {}
 
     // randomly selects a column
     size_t AIPlayer::algo1(const Board &b) {
@@ -33,7 +33,7 @@ namespace connect4 {
         return output;
     }
 
-    // always puts stone in left most column
+    // always puts chip in left most column
     size_t AIPlayer::algo2(const Board &b) {
         for (int col = 0; col < Board::getWidth(); ++col) {
             if(b.isValidMove(col)) return col;

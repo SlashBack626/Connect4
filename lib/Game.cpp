@@ -17,16 +17,16 @@ void connect4::Game::start() {
 }
 
 void connect4::Game::gameLoop() {
-    STONE player = STONE::PLAYER1;
+    CHIP player = CHIP::PLAYER1;
     while (!finished) {
-        if (player == STONE::PLAYER1) round++;
+        if (player == CHIP::PLAYER1) round++;
         std::system("clear");
         printRound(player);
         board.print();
-        getUserInput(players[(player == STONE::PLAYER1) ? 0 : 1]);
+        getUserInput(players[(player == CHIP::PLAYER1) ? 0 : 1]);
         finished = board.matchEnded();
-        if(finished) winner = (player == STONE::PLAYER1) ? WINNER::PLAYER1 : WINNER::PLAYER2;
-        player = (player == STONE::PLAYER1) ? STONE::PLAYER2 : STONE::PLAYER1;
+        if(finished) winner = (player == CHIP::PLAYER1) ? WINNER::PLAYER1 : WINNER::PLAYER2;
+        player = (player == CHIP::PLAYER1) ? CHIP::PLAYER2 : CHIP::PLAYER1;
     }
     std::system("clear");
     board.print();
@@ -46,11 +46,11 @@ void connect4::Game::printWinner(WINNER winner) {
     }
 }
 
-void connect4::Game::printRound(STONE player) {
+void connect4::Game::printRound(CHIP player) {
     std::cout << "Round: " << round << "\n"
-              << ((player == STONE::PLAYER1) ? "Player1" : "Player2") << "'s turn!" << std::endl;
+              << ((player == CHIP::PLAYER1) ? "Player1" : "Player2") << "'s turn!" << std::endl;
 }
 
 void connect4::Game::getUserInput(Player &p) {
-    board.setStone(p.makeMove(board), p.getStone());
+    board.putChip(p.makeMove(board), p.getChip());
 }

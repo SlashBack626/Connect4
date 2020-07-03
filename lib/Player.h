@@ -5,20 +5,24 @@
 #ifndef CONNECT4_PLAYER_H
 #define CONNECT4_PLAYER_H
 #include <cstdlib>
-#include "STONE.h"
+#include "CHIP.h"
 #include "Board.h"
 
 namespace connect4 {
     class Player {
     protected:
-        STONE stone;
+        CHIP chip;
 
     public:
-        explicit Player(STONE p);
+        explicit Player(CHIP p);
 
-        STONE getStone() const;
+        // returns the chip (color) of the player
+        CHIP getChip() const;
 
-        // return column
+        /*
+         * returns the decision where to put the chip based on the given Board
+         *  0 <= returnValue < Board::getWidth()
+         */
         virtual size_t makeMove(const Board &b) = 0;
     };
 }

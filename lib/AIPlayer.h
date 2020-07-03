@@ -27,8 +27,9 @@ namespace connect4 {
         size_t algo4(const Board &b);
 
     public:
-        explicit AIPlayer(STONE p, BOT bot = BOT::BOT1);
+        explicit AIPlayer(CHIP p, BOT bot = BOT::BOT1);
 
+        // selects one of the 4 predefined algorithms based on the bot property
         size_t makeMove(const Board &b) override;
     };
 }
