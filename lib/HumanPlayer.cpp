@@ -18,7 +18,7 @@ namespace connect4 {
             std::stringstream ss(line);
             ss >> input;
             valid = !ss.fail() && ss.eof();
-            if (valid && input > 0 && input <= Board::getWidth()) break;
+            if (valid && input > 0 && input <= Board::getWidth() && b.isValidMove(input-1)) break;
             std::cout << "Invalid input" << std::endl;
         }
         return input-1;
