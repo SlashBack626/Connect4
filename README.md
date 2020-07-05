@@ -6,3 +6,5 @@ A small c++ console game of 4 connect. Build only using the c++ standard library
 
 - open with Clion
 - build with cmake
+
+# [Documentation](https://slashback626.github.io/Connect4)
